@@ -17,10 +17,10 @@ module Doh
         Doh::root = curr_directory
         return curr_directory
       end
-      return false if (path == '/')
+      return nil if (path == '/')
       curr_directory = File.expand_path(File.join(curr_directory, '..'))
     end
-    false
+    nil
   end
 
   def self.find_root_from_file(filepath)
