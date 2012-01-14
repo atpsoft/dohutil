@@ -15,7 +15,7 @@ module Doh
       path = File.join(curr_directory, filename)
       if File.exist?(path)
         Doh::root = curr_directory
-        return true
+        return curr_directory
       end
       return false if (path == '/')
       curr_directory = File.expand_path(File.join(curr_directory, '..'))
