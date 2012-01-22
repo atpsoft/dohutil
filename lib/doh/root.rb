@@ -1,3 +1,5 @@
+require 'doh/findup'
+
 module Doh
   def self.root
     @root
@@ -10,17 +12,10 @@ module Doh
   end
 
   def self.find_root(start_directory, filename = 'dohroot', max_tries = 20)
-    curr_directory = start_directory
-    max_tries.times do
-      path = File.join(curr_directory, filename)
-      if File.exist?(path)
-        Doh::root = curr_directory
-        return curr_directory
-      end
-      return nil if (path == '/')
-      curr_directory = File.expand_path(File.join(curr_directory, '..'))
+    rootfile = Doh::findup(start_directory, filename, max_tries)
+    if rootfile
+      Doh::root = File.dirname(rootfile)
     end
-    nil
   end
 
   def self.find_root_from_file(filepath)
