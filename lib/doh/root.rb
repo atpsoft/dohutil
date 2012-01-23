@@ -19,8 +19,8 @@ module Doh
     end
   end
 
-  def self.find_root_from_file(filepath)
-    Doh::find_root(File.dirname(filepath))
+  def self.find_root_from_file(filepath = nil)
+    Doh::find_root(File.dirname(filepath || caller[0]))
   end
 
   def self.find_root_from_path(path)
@@ -31,7 +31,7 @@ module Doh
     end
   end
 
-  def self.find_root_from_bin
+  def self.find_root_from_prog
     Doh::find_root(File.dirname($PROGRAM_NAME))
   end
 
