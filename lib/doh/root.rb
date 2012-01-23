@@ -8,7 +8,8 @@ module Doh
   def self.root=(directory)
     @root = directory
     # having a root lib/ directory in your gem or application tree is a common standard now
-    $LOAD_PATH.push(File.join(@root, 'lib'))
+    libdir = File.join(@root, 'lib')
+    $LOAD_PATH.push(libdir) if libdir
   end
 
   def self.find_root(start_directory, filename = 'dohroot', max_tries = 20)
