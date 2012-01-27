@@ -3,8 +3,8 @@ require 'rake'
 Gem::Specification.new do |s|
   s.name = 'dohutil'
   s.version = '0.1.0'
-  s.summary = 'Tiny standalone utilities, packaged together for convenience.'
-  s.description = 'This is a collection of tiny standalone utilities, built primarily to support other doh* gems (note the gems that are dependent on dohutil), but designed in a way that hopefully makes them more generally useful.'
+  s.summary = 'Tiny utilities, packaged together for convenience.'
+  s.description = 'This is a collection of tiny utilities, built primarily to support other doh* gems (note the gems that are dependent on dohutil), but designed in a way that hopefully makes them more generally useful.'
   s.require_path = 'lib'
   s.required_ruby_version = '>= 1.9.2'
   s.authors = ['Makani Mason', 'Kem Mason']
