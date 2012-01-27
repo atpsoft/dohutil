@@ -2,12 +2,12 @@ require 'rake'
 
 Gem::Specification.new do |s|
   s.name = 'dohutil'
-  s.version = '0.1.1'
+  s.version = '0.1.2'
   s.summary = 'Tiny utilities, packaged together for convenience.'
   s.description = %q{
   This is a collection of tiny utilities, for a variety of purposes.
-  Originally built to support other doh* gems, such as dohtest, but
-  designed in a way that hopefully makes them more generally useful.
+  Originally built to support other doh* gems, such as dohtest.
+  Hopefully can end up being more generally useful.
   }
   s.require_path = 'lib'
   s.required_ruby_version = '>= 1.9.2'
