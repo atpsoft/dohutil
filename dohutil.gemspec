@@ -2,9 +2,9 @@ require 'rake'
 
 Gem::Specification.new do |s|
   s.name = 'dohutil'
-  s.version = '0.1.2'
+  s.version = '0.1.3'
   s.summary = 'assorted tiny utilities'
-  s.description = 'Tiny utilities, similar to Facets but on a much smaller scale.'
+  s.description = 'Tiny utilities, packaged together so they don't each have their own gem.'
   s.require_path = 'lib'
   s.required_ruby_version = '>= 1.9.2'
   s.authors = ['Makani Mason', 'Kem Mason']
