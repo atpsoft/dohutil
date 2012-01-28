@@ -3,12 +3,8 @@ require 'rake'
 Gem::Specification.new do |s|
   s.name = 'dohutil'
   s.version = '0.1.2'
-  s.summary = 'Tiny utilities, packaged together for convenience.'
-  s.description = %q{
-  This is a collection of tiny utilities, for a variety of purposes.
-  Originally built to support other doh* gems, such as dohtest.
-  Hopefully can end up being more generally useful.
-  }
+  s.summary = 'assorted tiny utilities'
+  s.description = 'Tiny utilities, similar to Facets but on a much smaller scale.'
   s.require_path = 'lib'
   s.required_ruby_version = '>= 1.9.2'
   s.authors = ['Makani Mason', 'Kem Mason']
