@@ -3,7 +3,7 @@ class Object
     class DohlogStubInterface
       def self.debug(msg); end
       def self.info(msg); end
-      def self.alert(msg); end
+      def self.warn(msg); end
       def self.error(msg, exception = nil); end
       def self.fatal(msg, exception = nil); end
     end
