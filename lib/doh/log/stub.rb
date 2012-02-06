@@ -1,5 +1,5 @@
 class Object
-  unless respond_to?(:dohlog)
+  unless method_defined?(:dohlog)
     class DohlogStubInterface
       def self.debug(msg); end
       def self.info(msg); end
