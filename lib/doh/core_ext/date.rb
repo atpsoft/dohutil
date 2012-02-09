@@ -73,6 +73,10 @@ end
 class DateTime
   DOHRUBY_SECONDS_IN_DAY = (24 * 60 * 60).freeze
 
+  def self.seconds_to_days(seconds)
+    seconds.to_f / DOHRUBY_SECONDS_IN_DAY.to_f
+  end
+
   def self.zow
     obj = now
     new(obj.year, obj.month, obj.mday, obj.hour, obj.min, obj.sec)
