@@ -1,10 +1,10 @@
 require 'doh/root'
-require 'doh/core_ext/kernel'
 
 module DohApp
 
 def self.require_custom_config
-  require_optional(File::join(Doh::root, 'config/dohapp'))
+  path = File.expand_path(File::join(Doh::root, 'config/dohapp.rb'))
+  require(path) if File.exist?(path)
 end
 
 def self.init_from_file(filepath)
