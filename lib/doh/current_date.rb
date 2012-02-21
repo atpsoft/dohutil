@@ -6,7 +6,7 @@ module Doh
 
 def self.current_date(dflt = Date.today)
   return dflt if @@current_date_objs.empty?
-  @@current_date_objs.last.date_only
+  @@current_date_objs.last.to_date
 end
 
 def self.current_datetime(dflt = DateTime.zow)
