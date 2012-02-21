@@ -33,10 +33,6 @@ class Date
     (wday > 0) && (wday < 6)
   end
 
-  def date_only
-    self
-  end
-
   def self.short_weekday_to_num(weekday)
     @@short_days_of_week ||= Time::RFC2822_DAY_NAME.collect {|day| day.downcase}
     @@short_days_of_week.index(weekday.downcase)
@@ -48,10 +44,6 @@ class Date
       years_diff -= 1
     end
     years_diff
-  end
-
-  def make_datetime(hour = 0, min = 0, sec = 0)
-    DateTime.new(year, month, mday, hour, min, sec)
   end
 
   def add_months(months, new_day = nil)
@@ -86,10 +78,6 @@ class DateTime
     strftime('%F %X')
   end
 
-  def date_only
-    Date.new(year, month, mday)
-  end
-
   def add_seconds(seconds)
     self + Rational(seconds, DOHRUBY_SECONDS_IN_DAY)
   end
@@ -101,9 +89,5 @@ class DateTime
   # subtract another DateTime object, return difference in seconds
   def sub_dt(other)
     ((self - other) * DOHRUBY_SECONDS_IN_DAY).to_i
-  end
-
-  def make_datetime
-    self
   end
 end
