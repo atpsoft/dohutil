@@ -45,21 +45,6 @@ class Date
     end
     years_diff
   end
-
-  def add_months(months, new_day = nil)
-    total_month = month + months
-    new_month = total_month % 12
-    new_month = 12 if new_month == 0
-    new_year = year + ((total_month - 1) / 12)
-    calc_day = [mday, Date.days_in_month(new_year, new_month)].min
-    Date.new(new_year, new_month, new_day || calc_day)
-  end
-
-  def add_years(years)
-    new_year = year + years
-    calc_day = [mday, Date.days_in_month(new_year, month)].min
-    Date.new(new_year, month, calc_day)
-  end
 end
 
 class DateTime
