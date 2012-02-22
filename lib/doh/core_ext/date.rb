@@ -44,4 +44,8 @@ class Date
     end
     years_diff
   end
+
+  def make_datetime(hour = 0, minute = 0, second = 0, offset = 0)
+    DateTime.new(year, month, mday, hour, minute, second, offset)
+  end
 end
