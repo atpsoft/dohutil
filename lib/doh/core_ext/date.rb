@@ -1,5 +1,4 @@
 require 'date'
-require 'time'
 
 class Date
   def self.days_in_month(year, month)
@@ -44,35 +43,5 @@ class Date
       years_diff -= 1
     end
     years_diff
-  end
-end
-
-class DateTime
-  DOHRUBY_SECONDS_IN_DAY = (24 * 60 * 60).freeze
-
-  def self.seconds_to_days(seconds)
-    seconds.to_f / DOHRUBY_SECONDS_IN_DAY.to_f
-  end
-
-  def self.zow
-    obj = now
-    new(obj.year, obj.month, obj.mday, obj.hour, obj.min, obj.sec)
-  end
-
-  def inspect
-    strftime('%F %X')
-  end
-
-  def add_seconds(seconds)
-    self + Rational(seconds, DOHRUBY_SECONDS_IN_DAY)
-  end
-
-  def sub_seconds(seconds)
-    add_seconds(-seconds)
-  end
-
-  # subtract another DateTime object, return difference in seconds
-  def sub_dt(other)
-    ((self - other) * DOHRUBY_SECONDS_IN_DAY).to_i
   end
 end

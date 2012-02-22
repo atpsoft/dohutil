@@ -1,4 +1,4 @@
-require 'doh/core_ext/date'
+require 'doh/core_ext/datewithtime'
 
 module Doh
 
@@ -9,7 +9,7 @@ def self.current_date(dflt = Date.today)
   @@current_date_objs.last.to_date
 end
 
-def self.current_datetime(dflt = DateTime.zow)
+def self.current_datetime(dflt = DateTime.now.utc)
   return dflt if @@current_date_objs.empty?
   cdo = @@current_date_objs.last
   return cdo if cdo.respond_to?(:hour)
