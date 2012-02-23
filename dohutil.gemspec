@@ -2,7 +2,7 @@ require 'rake'
 
 Gem::Specification.new do |s|
   s.name = 'dohutil'
-  s.version = '0.1.4'
+  s.version = '0.1.5'
   s.summary = 'assorted tiny utilities'
   s.description = "Tiny utilities, packaged together so they don't each have their own gem."
   s.require_path = 'lib'
@@ -13,5 +13,6 @@ Gem::Specification.new do |s|
   s.license = 'MIT'
   s.email = ['devinfo@atpsoft.com']
   s.extra_rdoc_files = ['MIT-LICENSE']
-  s.files = FileList["{lib}/**/*"].to_a
+  s.test_files = FileList["{test}/**/*.rb"].to_a
+  s.files = FileList["{lib,test}/**/*"].to_a
 end
