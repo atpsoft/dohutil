@@ -12,6 +12,12 @@ class DateTime
   end
 end
 
+class Time
+  def to_display
+    strftime('%m/%d/%Y %I:%M%P')
+  end
+end
+
 class Date
   def to_display
     strftime('%m/%d/%Y')
