@@ -42,36 +42,6 @@ class BigDecimal
   end
 end
 
-class PhoneDisplayString < String
-  def to_display
-    Doh::display_phone(self)
-  end
-
-  def to_s
-    self
-  end
-end
-
-class PostalDisplayString < String
-  def to_display
-    Doh::display_postal(self)
-  end
-
-  def to_s
-    self
-  end
-end
-
-class SsnDisplayString < String
-  def to_display
-    Doh::display_ssn(self)
-  end
-
-  def to_s
-    self
-  end
-end
-
 module Doh
 
 def self.display_phone(str)
