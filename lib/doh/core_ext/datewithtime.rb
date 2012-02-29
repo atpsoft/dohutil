@@ -36,10 +36,6 @@ class DateTime
     seconds.to_f / DOHRUBY_SECONDS_IN_DAY.to_f
   end
 
-  def inspect
-    strftime('%F %X')
-  end
-
   def next_second(n = 1)
     self + (SECONDS_IN_DAY * n)
   end

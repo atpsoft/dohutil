@@ -9,11 +9,6 @@ class Date
     Time.now.utc.to_date
   end
 
-  undef inspect
-  def inspect
-    strftime('%F')
-  end
-
   def weekday?
     (wday > 0) && (wday < 6)
   end
