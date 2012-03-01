@@ -14,11 +14,9 @@ class BigDecimal
     self
   end
 
-  unless method_defined?(:_original_to_s)
-    alias :_original_to_s :to_s
-    def to_s(format = 'F')
-      _original_to_s(format)
-    end
+  alias :_doh_original_to_s :to_s
+  def to_s(format = 'F')
+    _doh_original_to_s(format)
   end
 
   def to_dig(digits_after_decimal = 2)
