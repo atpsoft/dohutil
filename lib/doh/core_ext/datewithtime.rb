@@ -20,15 +20,8 @@ module MakeTimeLikeDateTime
   end
 end
 
-module EnhanceDateTimeAndTime
-  def utcnow
-    now.utc
-  end
-end
-
 class DateTime
   include MakeDateTimeLikeTime
-  extend EnhanceDateTimeAndTime
 
   DOHRUBY_SECONDS_IN_DAY = (24 * 60 * 60).freeze
 
@@ -52,5 +45,4 @@ end
 
 class Time
   include MakeTimeLikeDateTime
-  extend EnhanceDateTimeAndTime
 end

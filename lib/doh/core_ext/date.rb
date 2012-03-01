@@ -5,10 +5,6 @@ class Date
     civil(year, month, -1).mday
   end
 
-  def self.utcday
-    Time.now.utc.to_date
-  end
-
   def weekday?
     (wday > 0) && (wday < 6)
   end
