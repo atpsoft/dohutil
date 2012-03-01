@@ -14,6 +14,13 @@ class BigDecimal
     self
   end
 
+  unless method_defined?(:_original_to_s)
+    alias :_original_to_s :to_s
+    def to_s(format = 'F')
+      _original_to_s(format)
+    end
+  end
+
   def to_dig(digits_after_decimal = 2)
     raise ArgumentError.new("digits_after_decimal must be > 0") unless digits_after_decimal > 0
     return '0.' + ('0' * digits_after_decimal) if nan? || infinite?
