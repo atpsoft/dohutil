@@ -16,7 +16,7 @@ module MakeTimeLikeDateTime
   end
 
   def prev_second(n = 1)
-    self + n
+    self - n
   end
 end
 
