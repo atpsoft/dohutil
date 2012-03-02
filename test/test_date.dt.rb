@@ -1,9 +1,8 @@
-require 'minitest/autorun'
-require_relative '../lib/doh/core_ext/date'
+require 'doh/core_ext/date'
 
 module Doh
 
-class Test_core_ext_date < MiniTest::Unit::TestCase
+class Test_core_ext_date < DohTest::TestGroup
   def test_weekday
     Date.new(2007, 1, 15).upto(Date.new(2007, 1, 19)) { |date| assert(date.weekday?) }
     assert(!Date.new(2007, 1, 13).weekday?)
