@@ -4,12 +4,12 @@ module Doh
 
 @@current_date_objs = []
 
-def self.current_date(dflt = Date.utcday)
+def self.current_date(dflt = Date.today)
   return dflt if @@current_date_objs.empty?
   @@current_date_objs.last.to_date
 end
 
-def self.current_datetime(dflt = DateTime.utcnow)
+def self.current_datetime(dflt = DateTime.zow)
   return dflt if @@current_date_objs.empty?
   cdo = @@current_date_objs.last
   return cdo if cdo.respond_to?(:hour)

@@ -1,29 +1,13 @@
 require 'date'
 require 'time'
 
-# these are sets of methods to make DateTime & Time objects more interchangeable
-# they are not comprehensive, nor exact - for example, this DateTime utc method does not modify the receiver, whereas the Time utc method does
-# they simply provide good enough compatibility for what I've encountered so far
-module MakeDateTimeLikeTime
-  def utc
-    new_offset
-  end
-end
-
-module MakeTimeLikeDateTime
-  def next_second(n = 1)
-    self + n
-  end
-
-  def prev_second(n = 1)
-    self - n
-  end
-end
-
 class DateTime
-  include MakeDateTimeLikeTime
-
   DOHRUBY_SECONDS_IN_DAY = (24 * 60 * 60).freeze
+
+  def self.zow
+    obj = now
+    new(obj.year, obj.month, obj.mday, obj.hour, obj.min, obj.sec, 0)
+  end
 
   def self.seconds_to_days(seconds)
     seconds.to_f / DOHRUBY_SECONDS_IN_DAY.to_f
@@ -44,5 +28,16 @@ class DateTime
 end
 
 class Time
-  include MakeTimeLikeDateTime
+  def self.zow
+    obj = now
+    new(obj.year, obj.month, obj.mday, obj.hour, obj.min, obj.sec, 0)
+  end
+
+  def next_second(n = 1)
+    self + n
+  end
+
+  def prev_second(n = 1)
+    self - n
+  end
 end
