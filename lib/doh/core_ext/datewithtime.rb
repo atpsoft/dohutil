@@ -2,6 +2,11 @@ require 'date'
 require 'time'
 
 class DateTime
+  # SECONDS_IN_DAY is no longer defined in 1.9.3
+  unless const_defined?(:SECONDS_IN_DAY)
+    SECONDS_IN_DAY = Rational(1, 60 * 60 * 24)
+  end
+
   def self.zow
     obj = now
     new(obj.year, obj.month, obj.mday, obj.hour, obj.min, obj.sec, 0)

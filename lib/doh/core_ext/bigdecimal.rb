@@ -2,16 +2,22 @@ require 'bigdecimal'
 require 'bigdecimal/util'
 
 class Integer
-  # this is being added in 1.9.3, so remove it once that is the required version
-  def to_d
-    to_s.to_d
+  # to_d is already defined in 1.9.3
+  unless method_defined?(:to_d)
+    puts "defining Integer.to_d"
+    def to_d
+      to_s.to_d
+    end
   end
 end
 
 class BigDecimal
-  # this is being added in 1.9.3, so remove it once that is the required version
-  def to_d
-    self
+  # to_d is already defined in 1.9.3
+  unless method_defined?(:to_d)
+    puts "defining BigDecimal.to_d"
+    def to_d
+      self
+    end
   end
 
   alias :_doh_original_to_s :to_s
