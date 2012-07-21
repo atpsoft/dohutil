@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require 'doh/app/origin'
-require 'example_library_file'
+require 'sample_library_file'
 
 OPTS = Doh::Options.new(
  { 'arg1' => ['defaultvalue', '-a', '--arg1 <value>', 'you can pass argument 1 here, if not passed it defaults to defaultvalue'], \
