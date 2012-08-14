@@ -45,7 +45,7 @@ end
 module Doh
 
 def self.display_phone(str, html_format = false)
-  return str unless str.size == 10
+  return str unless str.to_s.size == 10
   formatted = "#{str[0..2]}-#{str[3..5]}-#{str[6..9]}"
   if html_format
     "<a href='callto:+1#{formatted}'>#{formatted}</a>"
@@ -55,12 +55,12 @@ def self.display_phone(str, html_format = false)
 end
 
 def self.display_postal(str)
-  return str unless str.size == 9
+  return str unless str.to_s.size == 9
   return str[0..4] + '-' + str[5..8]
 end
 
 def self.display_ssn(str)
-  return str unless str.size == 9
+  return str unless str.to_s.size == 9
   str[0..2] + '-' + str[3..4] + '-' + str[5..8]
 end
 
