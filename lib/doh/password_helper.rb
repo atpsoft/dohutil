@@ -4,10 +4,10 @@ require 'highline'
 
 module Doh
 class PasswordHelper
-  @@highline = HighLine.new
+  @highline = HighLine.new
 
   def self.prompt_password(prompt = "Password: ")
-    @@highline.ask(prompt) {|q| q.echo = false}
+    @highline.ask(prompt) {|q| q.echo = false}
   end
 
 end
