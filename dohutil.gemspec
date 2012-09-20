@@ -2,12 +2,12 @@ require 'rake'
 
 Gem::Specification.new do |s|
   s.name = 'dohutil'
-  s.version = '0.2.6'
+  s.version = '0.2.7'
   s.summary = 'assorted tiny utilities'
   s.description = "Tiny utilities, packaged together so they don't each have their own gem."
   s.require_path = 'lib'
   s.required_ruby_version = '>= 1.9.2'
-  s.add_runtime_dependency 'dohroot', '>= 0.1.0'
+  s.add_runtime_dependency 'dohroot', '>= 0.1.1'
 	s.add_runtime_dependency 'highline', '>= 1.6.13'
   s.add_development_dependency 'dohtest', '>= 0.1.8'
   s.authors = ['Makani Mason', 'Kem Mason']
