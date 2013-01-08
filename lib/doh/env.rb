@@ -1,16 +1,17 @@
 module Doh
-  DEFAULT_ENV_PREFIXES = %w(DOH RACK RAILS)
+extend self
+ENV_PREFIXES = %w(DOH RACK RAILS).freeze
 
-  def self.env
-    @env ||= (find_env || 'development')
-  end
+def env
+  @env ||= find_env
+end
 
-  def self.find_env(prefixes = nil)
-    retval = nil
-    (prefixes || DEFAULT_ENV_PREFIXES).each do |elem|
-      retval = ENV["#{elem}_ENV"]
-      break if retval
-    end
-    retval
+def find_env
+  ENV_PREFIXES.each do |prefix|
+    denval = ENV["#{prefix}_ENV"]
+    return denval if denval
   end
+  raise 'please set DOH_ENV, RACK_ENV or RAILS_ENV'
+end
+
 end
