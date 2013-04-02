@@ -2,7 +2,7 @@ require 'rake'
 
 Gem::Specification.new do |s|
   s.name = 'dohutil'
-  s.version = '0.2.8'
+  s.version = '0.2.9'
   s.summary = 'assorted tiny utilities'
   s.description = "Tiny utilities, packaged together so they don't each have their own gem."
   s.require_path = 'lib'
