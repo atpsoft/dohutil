@@ -2,9 +2,7 @@ require 'bigdecimal'
 require 'bigdecimal/util'
 
 class Integer
-  # to_d is already defined in 1.9.3
   unless method_defined?(:to_d)
-    puts "defining Integer.to_d"
     def to_d
       to_s.to_d
     end
@@ -12,9 +10,7 @@ class Integer
 end
 
 class BigDecimal
-  # to_d is already defined in 1.9.3
   unless method_defined?(:to_d)
-    puts "defining BigDecimal.to_d"
     def to_d
       self
     end
@@ -26,8 +22,15 @@ class BigDecimal
   end
 
   def to_dig(digits_after_decimal = 2)
-    raise ArgumentError.new("digits_after_decimal must be > 0") unless digits_after_decimal > 0
-    return '0.' + ('0' * digits_after_decimal) if nan? || infinite?
+    raise ArgumentError.new("digits_after_decimal must be >= 0") unless digits_after_decimal >= 0
+    if nan? || infinite?
+      return '0' if digits_after_decimal == 0
+      return '0.' + ('0' * digits_after_decimal)
+    end
+
+    if digits_after_decimal == 0
+      return to_i.to_s
+    end
 
     retval = truncate(digits_after_decimal).to_s('F')
     digits_needed = retval.index('.') + digits_after_decimal + 1 - retval.size
