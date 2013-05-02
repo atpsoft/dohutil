@@ -39,3 +39,11 @@ class BigDecimal
     retval
   end
 end
+
+class NilClass
+  NIL_ZERO_BIGD = BigDecimal('0')
+
+  def to_d
+    NIL_ZERO_BIGD
+  end
+end
