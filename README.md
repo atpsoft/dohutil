@@ -1,6 +1,8 @@
 DohUtil
 ========
 
+[![Build Status](https://travis-ci.org/atpsoft/dohutil.png)](https://travis-ci.org/atpsoft/dohutil)
+
 DohUtil is a library designed to help simplify application development (includes location / etc.), and for miscellaneous ruby enhancements.
 
 Sample code exists in the sample directory.  If you run it like so:
