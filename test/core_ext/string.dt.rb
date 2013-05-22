@@ -1,4 +1,4 @@
-require 'doh/core_ext/string'
+require 'dohutil/core_ext/string'
 
 module Doh
 

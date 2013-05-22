@@ -1,4 +1,4 @@
-require 'doh/core_ext/force_deep_copy'
+require 'dohutil/core_ext/force_deep_copy'
 
 module Doh
 

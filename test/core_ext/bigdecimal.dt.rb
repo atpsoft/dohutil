@@ -1,4 +1,4 @@
-require 'doh/core_ext/bigdecimal'
+require 'dohutil/core_ext/bigdecimal'
 
 module Doh
 

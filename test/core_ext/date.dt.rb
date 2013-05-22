@@ -1,4 +1,4 @@
-require 'doh/core_ext/date'
+require 'dohutil/core_ext/date'
 
 module Doh
 

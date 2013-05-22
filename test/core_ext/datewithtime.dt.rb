@@ -1,4 +1,4 @@
-require 'doh/core_ext/datewithtime'
+require 'dohutil/core_ext/datewithtime'
 
 module Doh
 
