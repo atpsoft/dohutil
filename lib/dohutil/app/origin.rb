@@ -1,2 +1,2 @@
-require 'doh/app/init_from_prog'
-require 'doh/options'
+require 'dohutil/app/init_from_prog'
+require 'dohroot/options'

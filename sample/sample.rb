@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require 'doh/app/origin'
+require 'dohutil/app/origin'
 require 'sample_library_file'
 
 OPTS = Doh::Options.new(
