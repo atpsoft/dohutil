@@ -2,6 +2,7 @@ DohUtil
 ========
 
 [![Build Status](https://travis-ci.org/atpsoft/dohutil.png)](https://travis-ci.org/atpsoft/dohutil)
+[![Code Climate](https://codeclimate.com/github/atpsoft/dohutil.png)](https://codeclimate.com/github/atpsoft/dohutil)
 
 DohUtil is a library designed to help simplify application development (includes location / etc.), and for miscellaneous ruby enhancements.
 
