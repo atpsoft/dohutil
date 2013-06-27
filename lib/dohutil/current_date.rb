@@ -9,7 +9,7 @@ def current_date(dflt = Date.today)
   @current_date_stack.last.to_date
 end
 
-def current_datetime(dflt = DateTime.now)
+def current_datetime(dflt = DateTime.zow)
   return dflt if @current_date_stack.empty?
   cdo = @current_date_stack.last
   return cdo if cdo.respond_to?(:hour)
