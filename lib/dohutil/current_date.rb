@@ -28,6 +28,10 @@ def clear_current_date
   @current_date_stack.clear
 end
 
+def date_as_start_of_day(date_obj, &block)
+  date_as(DateTime.new(date_obj.year, date_obj.month, date_obj.day, 0, 0, 0), &block)
+end
+
 def date_as(date_obj)
   push_current_date(date_obj)
   begin
