@@ -5,15 +5,27 @@ module Doh
 class Parent
   force_deep_copy :var1, :var2
   attr_accessor :var1, :var2
+
+  def initialize
+    @var1 = @var2 = nil
+  end
 end
 
 class Child < Parent
   force_deep_copy :var3
   attr_accessor :var3
+
+  def initialize
+    @var3 = nil
+  end
 end
 
 class ShallowParent
   attr_accessor :var1, :var2
+
+  def initialize
+    @var1 = @var2 = nil
+  end
 end
 
 class Test_core_ext_force_deep_copy < DohTest::TestGroup
