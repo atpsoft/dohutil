@@ -2,10 +2,7 @@ require 'date'
 require 'time'
 
 class DateTime
-  # SECONDS_IN_DAY is no longer defined in 1.9.3
-  unless const_defined?(:SECONDS_IN_DAY)
-    SECONDS_IN_DAY = Rational(1, 60 * 60 * 24)
-  end
+  DAY_SECONDS = 60 * 60 * 24
 
   def self.zow
     obj = now
@@ -13,11 +10,11 @@ class DateTime
   end
 
   def self.seconds_to_days(seconds)
-    seconds.to_f * SECONDS_IN_DAY #.to_f
+    seconds.to_f / DAY_SECONDS.to_f
   end
 
   def next_second(n = 1)
-    self + (SECONDS_IN_DAY * n)
+    self + self.class.seconds_to_days(n)
   end
 
   def prev_second(n = 1)
@@ -26,7 +23,7 @@ class DateTime
 
   # subtract another DateTime object, return difference in seconds
   def sub_dt(other)
-    ((self - other) / SECONDS_IN_DAY).to_i
+    ((self - other) * DAY_SECONDS).to_i
   end
 end
 
