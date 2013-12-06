@@ -5,8 +5,11 @@ class DateTime
   DAY_SECONDS = 60 * 60 * 24
 
   def self.zow
-    obj = now
-    new(obj.year, obj.month, obj.mday, obj.hour, obj.min, obj.sec, 0)
+    now.zowify
+  end
+
+  def zowify
+    self.class.new(year, month, mday, hour, min, sec, 0)
   end
 
   def self.seconds_to_days(seconds)
@@ -29,8 +32,11 @@ end
 
 class Time
   def self.zow
-    obj = now
-    new(obj.year, obj.month, obj.mday, obj.hour, obj.min, obj.sec, 0)
+    now.zowify
+  end
+
+  def zowify
+    self.class.new(year, month, mday, hour, min, sec, 0)
   end
 
   def next_second(n = 1)
