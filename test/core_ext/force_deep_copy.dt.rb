@@ -59,6 +59,7 @@ class Test_core_ext_force_deep_copy < DohTest::TestGroup
     child.var2 = {'key1' => 'val1'}
     child.var3 = Parent.new
     child.var3.var1 = ['blah']
+    child.var3.var2 = nil
     child2 = child.dup
     assert(!child2.var1.equal?(child.var1))
     assert(!child2.var2.equal?(child.var2))
