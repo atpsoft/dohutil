@@ -4,7 +4,7 @@ require 'bigdecimal/util'
 class Integer
   unless method_defined?(:to_d)
     def to_d
-      to_s.to_d
+      BigDecimal(self)
     end
   end
 end
@@ -41,7 +41,7 @@ class BigDecimal
 end
 
 class NilClass
-  NIL_ZERO_BIGD = BigDecimal('0')
+  NIL_ZERO_BIGD = BigDecimal(0)
 
   def to_d
     NIL_ZERO_BIGD

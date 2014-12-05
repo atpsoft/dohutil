@@ -3,6 +3,10 @@ require 'dohutil/core_ext/bigdecimal'
 module Doh
 
 class Test_core_ext_bigdecimal < DohTest::TestGroup
+  def test_integer_to_d
+    assert_equal(BigDecimal(1), 1.to_d)
+  end
+
   def test_to_dig_valid
     assert_equal('0.00', BigDecimal('0').to_dig)
     assert_equal('1.00', BigDecimal('1').to_dig)
