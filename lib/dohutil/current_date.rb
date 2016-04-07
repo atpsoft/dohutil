@@ -46,4 +46,13 @@ def date_as(date_obj)
   retval
 end
 
+# keep the current date, but set the time
+def time_as(hour, minute, second)
+  cdo = Doh.current_datetime
+  new_time = DateTime.new(cdo.year, cdo.month, cdo.day, hour, minute, second, cdo.zone)
+  date_as(new_time) do
+    yield
+  end
+end
+
 end
