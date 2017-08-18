@@ -19,10 +19,10 @@ class Test_core_ext_bigdecimal < DohTest::TestGroup
     assert_raises(ArgumentError) { BigDecimal('1').to_dig(-1) }
     assert_equal('0.00', BigDecimal('NaN').to_dig)
     assert_equal('0.00', BigDecimal('Infinity').to_dig)
-    assert_equal('0.00', BigDecimal('blah').to_dig)
+    assert_equal('0.00', BigDecimal('0').to_dig)
     assert_equal('0', BigDecimal('NaN').to_dig(0))
     assert_equal('1', BigDecimal('1').to_dig(0))
-    assert_equal('0', BigDecimal('blah').to_dig(0))
+    assert_equal('0', BigDecimal('0').to_dig(0))
   end
 
   def test_to_dig_doesnt_modify
