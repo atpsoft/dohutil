@@ -9,3 +9,21 @@ class Fixnum
     return false
   end
 end
+
+class Date
+  def empty?
+    return false
+  end
+end
+
+class DateTime
+  def empty?
+    return false
+  end
+end
+
+class Time
+  def empty?
+    return false
+  end
+end
