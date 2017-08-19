@@ -27,3 +27,9 @@ class Time
     return false
   end
 end
+
+class BigDecimal
+  def empty?
+    return false
+  end
+end
