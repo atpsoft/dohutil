@@ -4,7 +4,7 @@ class NilClass
   end
 end
 
-class Fixnum
+class Numeric
   def empty?
     return false
   end
@@ -16,19 +16,7 @@ class Date
   end
 end
 
-class DateTime
-  def empty?
-    return false
-  end
-end
-
 class Time
-  def empty?
-    return false
-  end
-end
-
-class BigDecimal
   def empty?
     return false
   end
