@@ -3,7 +3,7 @@ extend self
 
 def disable_verbose
   old_verbose = $VERBOSE
-  $VERBOSE = false
+  $VERBOSE = nil
   yield
 ensure
   $VERBOSE = old_verbose
