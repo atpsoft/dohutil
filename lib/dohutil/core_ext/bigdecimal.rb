@@ -2,7 +2,7 @@ require 'bigdecimal'
 require 'bigdecimal/util'
 
 class Integer
-  unless method_defined?(:to_d)
+  if !method_defined?(:to_d)
     def to_d
       BigDecimal(self)
     end
@@ -10,7 +10,7 @@ class Integer
 end
 
 class BigDecimal
-  unless method_defined?(:to_d)
+  if !method_defined?(:to_d)
     def to_d
       self
     end
@@ -22,7 +22,7 @@ class BigDecimal
   end
 
   def to_dig(digits_after_decimal = 2)
-    raise ArgumentError.new("digits_after_decimal must be >= 0") unless digits_after_decimal >= 0
+    raise ArgumentError.new("digits_after_decimal must be >= 0") if digits_after_decimal < 0
     if nan? || infinite?
       return '0' if digits_after_decimal == 0
       return '0.' + ('0' * digits_after_decimal)
