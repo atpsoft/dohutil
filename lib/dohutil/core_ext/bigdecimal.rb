@@ -43,7 +43,9 @@ end
 class NilClass
   NIL_ZERO_BIGD = BigDecimal(0)
 
-  def to_d
-    NIL_ZERO_BIGD
+  if !method_defined?(:to_d)
+    def to_d
+      NIL_ZERO_BIGD
+    end
   end
 end
